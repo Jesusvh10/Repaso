@@ -35,5 +35,18 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::post('actualizar/{id}','RepController@actualizar');
     Route::post('delete/{id}','RepController@delete');
 
+
 });
 
+
+Route::group(['middleware' => 'auth:api'], function() {
+
+    //Route::get('user', 'AuthController@user');
+    //Route::post('login', 'RepController@login');
+    Route::post('register_a', 'Aula_C@register');
+    Route::get('mostrar_a', 'Aula_C@mostrar_a');
+    Route::get('mostrar_id_a/{id}', 'Aula_C@mostrar_id_a');
+    Route::post('actualizar_id/{id}','Aula_C@actualizar_id');
+    Route::post('delete_a/{id}','Aula_C@delete_a');
+
+});

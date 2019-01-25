@@ -4,17 +4,22 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRepasoTable extends Migration
+class TableAula extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+      public function up()
     {
-        Schema::create('repaso', function (Blueprint $table) {
+        Schema::create('aulas', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('lastname');
+            $table->integer('age');
+            $table->softDeletes(); //Nueva línea, para el borrado lógico
+
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreateRepasoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('repaso');
+        Schema::dropIfExists('testes');
     }
 }
